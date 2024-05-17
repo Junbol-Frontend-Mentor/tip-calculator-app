@@ -1,0 +1,473 @@
+// Importing Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+//------GENERAL SETTINGS -------------------------------
+
+// Universal reset also explicitly to all pseudo-elements
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+// Define color variables
+$colors: (
+  //--------PRIMARY-----------------------------------
+  'blue': hsl(246, 80%, 60%),
+  //--------NEUTRAL    ----------------------------
+  'light-red-work': hsl(15, 100%, 70%),
+  'soft-blue-play': hsl(195, 74%, 62%),
+  'light-red-study': hsl(348, 100%, 68%),
+  'limegreen-exercise': hsl(145, 58%, 55%),
+  'violet-social': hsl(264, 64%, 52%),
+  'soft-orange-self-care': hsl(43, 84%, 65%),
+  'very-dark-blue': hsl(226, 43%, 10%),
+  'dark-blue': hsl(236, 46%, 36%),
+  'mid-blue': hsl(236, 41%, 54%),
+  'desaturated-blue': hsl(268, 87%, 79%),
+  'pale-blue': hsl(236, 81%, 90%),
+  //--------STANDARD -----------------------------------
+  'white': hsl(0, 0%, 100%),
+  'grey': hsl(0, 0%, 50%),
+  'black': hsl(0, 0%, 0%)
+);
+
+// Function to retrieve colors
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// Typography Mixin with parameters
+@mixin typography($weight, $size, $line-height, $color) {
+  font-family: 'Rubik', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: color('very-dark-blue');
+  //background-color: crimson;
+}
+
+main {
+  //flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // padding: 0.5rem;
+  //background-color: color('charcoal-grey');
+}
+
+p {
+  @include typography(400, 1.5rem, 0.5, color('pale-blue'));
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  @include typography(500, 2rem, 0.5, color('white'));
+}
+
+.container {
+  width: 100%;
+  min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+  //margin: 0 auto;
+  padding: 2rem;
+  //background-color: color('charcoal-grey');
+  //background-color: darkturquoise;
+}
+
+.profile {
+  width: 100%;
+  min-height: 14rem; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  margin-bottom: 2rem;
+  //background-color: color('charcoal-grey');
+  //background-color: red;
+
+  &__profile_under {
+    width: 100%;
+    height: 14rem;
+    display: flex;
+    border-radius: 12px;
+    flex-direction: column;
+    background-color: color('dark-blue');
+    //background-color: aqua;
+  }
+  &__profile_top {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    background-color: color('desaturated-blue');
+  }
+  &__person {
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    //background-color: chartreuse;
+  }
+  &__photo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 4px solid color('white');
+    background-image: url(../assets/images/image-jeremy.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 1.5rem;
+    //background-color: color('dark-blue');
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__titles {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    justify-content: space-around;
+    //background-color: chocolate;
+  }
+
+  &__timeframeBtn {
+    @include typography(400, 1.5rem, 0.5, color('pale-blue'));
+    border-style: none;
+    background-color: color('dark-blue');
+    cursor: pointer;
+    transition: transform 0.7s ease;
+  }
+
+  &__timeframeBtn:hover {
+    color: color('white');
+    transform: scale(1.2);
+  }
+
+  &__active {
+    color: color('desaturated-blue');
+  }
+}
+
+.card {
+  width: 100%;
+  min-height: 21rem; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  opacity: 1;
+  margin-bottom: 2rem;
+  //background-color: color('white');
+  //background-color: chartreuse;
+
+  &__hidden {
+    display: block;
+  }
+
+  &__card_under {
+    width: 100%;
+    min-height: 25rem; /* Use min-height to accommodate varying content sizes */
+    display: flex;
+    position: relative;
+    border-radius: 12px;
+    //align-items: end;
+    opacity: 1;
+    background-color: color('light-red-work');
+    //background-color: chartreuse;
+  }
+  &__bgIcon {
+    width: 8rem; // 🐞🚩 don't add width and height in the html
+    height: 8rem;
+    position: absolute;
+    background-image: url(../assets/images/icon-work.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0.5rem;
+    right: 2rem;
+    opacity: 0.7;
+    //background-color: red;
+  }
+  &__card_top {
+    width: 100%;
+    min-height: 10rem; /* Use min-height to accommodate varying content sizes */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-bottom: 0;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 6rem;
+    opacity: 1;
+    z-index: 2;
+    background-color: color('dark-blue');
+    //background-color: darkgray;
+  }
+  &__card_top:hover {
+    background-color: color('mid-blue');
+  }
+
+  &__topMenu {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    //justify-content: space-between;
+    align-items: center;
+    position: relative; //✅ this force the ellipsis to be in at the edge
+    margin-bottom: 1rem;
+    //background-color: darkgreen;
+  }
+  &__activity {
+    @include typography(600, 2rem, 0.5, color('white'));
+  }
+  &__ellipsis {
+    width: 60px;
+    height: 20px;
+    font-size: 3em;
+    margin-bottom: 2rem; //✅ this force to be in the center vertically
+    color: color('white');
+    position: absolute; //✅ this force to be in at the edge
+    right: -1rem; //✅ this force to be in at the edge
+    //top: 10rem;
+    //background-color: darkred;
+  }
+
+  &__bottomMenu {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //background-color:darkgreen;
+  }
+
+  &__hours {
+    @include typography(200, 5rem, 0.5, color('white'));
+  }
+  &__previous {
+    display: inline-block;
+    @include typography(400, 1.5rem, 0.5, color('white'));
+  }
+
+  /*   &__bgImage {
+      order: -1; // This ensures the image is on top in mobile view
+      width: 100%;
+      height: 400px;
+      background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+      background-size: cover;
+      margin-bottom: 2rem;
+      border-radius: 0px 0px 15px 15px;
+      background-position: center;
+      //background-color: red;
+    } */
+
+  // &__legend {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   margin-bottom: 2rem;
+  //   //background-color: darkolivegreen;
+  // }
+}
+
+// ------- MAGIC ----------------------------
+
+//------   FOOTER    ----------------
+
+.attribution {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
+  color: color('grey');
+}
+.attribution a {
+  color: color('white');
+  text-decoration: none;
+}
+
+//------ MEDIA QUERY FOR DESKTOPS AND TABLETS ----------------
+
+/* Media Query for Desktops and Tablets */
+@media (min-width: 1400px) {
+  main {
+    margin-top: 3rem;
+  }
+
+  // the was a big 🐞 to force the profile to expand in the grid. The fix for that was to add height:100% to profile_under. To understand why this worked I ahve added some notes on the bottom
+  .profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    margin-bottom: 2rem;
+    //background-color: color('charcoal-grey');
+    //background-color: red;
+
+    &__profile_under {
+      width: 100%;
+      height: 100%; // ✅ This was the solution to the 🐞so the profile expands the 2 rows
+      display: flex;
+      border-radius: 12px;
+      flex-direction: column;
+      background-color: color('dark-blue');
+      //background-color: aqua;
+    }
+    &__profile_top {
+      width: 100%;
+      height: 50%; // ✅o the it only occupies half of the column
+      display: flex;
+      align-items: center;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      background-color: color('desaturated-blue');
+    }
+    &__person {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      //background-color: chartreuse;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+    &__titles {
+      width: auto;
+      height: 50%; // ✅o the it only occupies half of the column
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      //background-color: chocolate;
+    }
+  }
+
+  .card {
+    &__activity {
+      @include typography(600, 1.5rem, 0.5, color('white'));
+    }
+
+    &__hours {
+      @include typography(200, 2.5rem, 0.5, color('white'));
+    }
+
+    &__previous {
+      display: inline-block;
+      @include typography(400, 1rem, 0.5, color('white'));
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; // Four equal columns
+    grid-template-rows: auto auto auto; // Three rows with automatic height
+    grid-template-areas: 'profile work play study' // First row
+      'profile exercise social selfCare' // Second row
+      'footer footer footer footer'; // Third row
+    gap: 20px;
+    width: 80%;
+    padding: 20px;
+    margin-top: 100px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    grid-area: profile; // Assigns the profile section to the 'profile' area
+    grid-row: span 2; // Spans two rows
+  }
+
+  #cards-container {
+    display: contents; // Use the parent grid layout directly
+  }
+
+  .card:nth-child(1) {
+    grid-area: work;
+  }
+  .card:nth-child(2) {
+    grid-area: play;
+  }
+  .card:nth-child(3) {
+    grid-area: study;
+  }
+  .card:nth-child(4) {
+    grid-area: exercise;
+  }
+  .card:nth-child(5) {
+    grid-area: social;
+  }
+  .card:nth-child(6) {
+    grid-area: selfCare;
+  }
+
+  .attribution {
+    grid-area: footer; // Assigns the footer to the 'footer' area
+  }
+}
+
+/////// -------- NOTES --------------------//////////
+///
+/* 
+Why adding height:100% fixed the🐞?
+
+To understand why the grid-row: span 2 property didn't work as expected initially I need to mention a few details:
+
+CSS Grid and Element Size Grid Row Spanning:
+
+The grid-row: span 2 property tells the grid item to span two rows.
+For this to work, the element must have content or a defined height that causes it to occupy the space of those two rows.
+
+Implicit vs. Explicit Heights:
+When you use auto for grid-template-rows, the row heights are determined by the content inside them.
+If the content inside the grid item does not push it to span multiple rows, the grid item may not visibly span those rows.
+Reasons the Span Might Not Work as Expected:
+
+Implicit Content Height:
+If the content inside .profile does not inherently push it to span two rows, it will not visually expand even if grid-row: span 2 is applied.
+
+Flexbox and Grid Interactions:
+Using display: flex on .profile and its child elements might affect how the height is calculated and rendered.
+Flexbox children default to having a height of auto, which means they shrink to fit their content.
+Why Adding height: 100% Worked:
+
+Explicit Height:
+Adding height: 100% to .profile__profile_under ensured that the element explicitly occupied the full height of the grid rows it spanned.
+This forced the profile section to expand and visually fill the two rows. */
+
+///////--------   TOOLS ------------------- ////////////
+//🛠
+
+/* transition: transform 0.5s ease;
+&:hover {
+  color: color('soft-magenta'); 
+  transform: scale(1.2);
+}  */
