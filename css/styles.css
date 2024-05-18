@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 *,
 *::before,
 *::after {
@@ -20,221 +20,222 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   align-items: center;
-  background-color: hsl(226, 43%, 10%);
+  background-color: hsl(185, 41%, 84%);
 }
 
 main {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-p {
-  font-family: "Rubik", sans-serif;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.calculator {
+  width: 100%;
+  min-height: 100%; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  margin-top: 1rem;
+  border-radius: 20px 20px 0px 0px;
+  padding: 2rem;
+  background-color: hsl(0, 0%, 100%);
+}
+.calculator p {
+  font-family: "Space Mono", monospace;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 0.5;
-  color: hsl(236, 81%, 90%);
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
-
-h2 {
-  font-family: "Rubik", sans-serif;
+.calculator h2 {
+  font-family: "Space Mono", monospace;
   font-weight: 500;
   font-size: 2rem;
   line-height: 0.5;
   color: hsl(0, 0%, 100%);
 }
-
-.container {
-  width: 100%;
-  min-height: 700px; /* Use min-height to accommodate varying content sizes */
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  padding: 2rem;
-}
-
-.profile {
-  width: 100%;
-  min-height: 14rem; /* Use min-height to accommodate varying content sizes */
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-.profile__profile_under {
-  width: 100%;
-  height: 14rem;
-  display: flex;
-  border-radius: 12px;
-  flex-direction: column;
-  background-color: hsl(236, 46%, 36%);
-}
-.profile__profile_top {
-  width: 100%;
-  height: 10rem;
-  display: flex;
-  align-items: center;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
-  background-color: hsl(268, 87%, 79%);
-}
-.profile__person {
-  width: auto;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-.profile__photo {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  border: 4px solid hsl(0, 0%, 100%);
-  background-image: url(../assets/images/image-jeremy.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-right: 1.5rem;
-}
-.profile__info {
-  display: flex;
-  flex-direction: column;
-}
-.profile__titles {
-  display: flex;
-  align-items: center;
-  height: 2rem;
-  justify-content: space-around;
-}
-.profile__timeframeBtn {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 0.5;
-  color: hsl(236, 81%, 90%);
-  border-style: none;
-  background-color: hsl(236, 46%, 36%);
-  cursor: pointer;
-  transition: transform 0.7s ease;
-}
-.profile__timeframeBtn:hover {
-  color: hsl(0, 0%, 100%);
-  transform: scale(1.2);
-}
-.profile__active {
-  color: hsl(268, 87%, 79%);
-}
-
-.card {
-  width: 100%;
-  min-height: 21rem; /* Use min-height to accommodate varying content sizes */
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  opacity: 1;
-  margin-bottom: 2rem;
-  /*   &__bgImage {
-      order: -1; // This ensures the image is on top in mobile view
-      width: 100%;
-      height: 400px;
-      background-image: url(../assets/images/illustration-sign-up-mobile.svg);
-      background-size: cover;
-      margin-bottom: 2rem;
-      border-radius: 0px 0px 15px 15px;
-      background-position: center;
-      //background-color: red;
-    } */
-}
-.card__hidden {
-  display: block;
-}
-.card__card_under {
-  width: 100%;
-  min-height: 25rem; /* Use min-height to accommodate varying content sizes */
-  display: flex;
-  position: relative;
-  border-radius: 12px;
-  opacity: 1;
-  background-color: hsl(15, 100%, 70%);
-}
-.card__bgIcon {
-  width: 8rem;
-  height: 8rem;
-  position: absolute;
-  background-image: url(../assets/images/icon-work.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  top: 0.5rem;
-  right: 2rem;
-  opacity: 0.7;
-}
-.card__card_top {
-  width: 100%;
-  min-height: 10rem; /* Use min-height to accommodate varying content sizes */
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  margin-bottom: 0;
-  align-items: center;
-  border-radius: 12px;
-  margin-top: 6rem;
-  opacity: 1;
-  z-index: 2;
-  background-color: hsl(236, 46%, 36%);
-}
-.card__card_top:hover {
-  background-color: hsl(236, 41%, 54%);
-}
-.card__topMenu {
+.calculator .input-grp {
   width: 100%;
   height: 5rem;
   display: flex;
-  align-items: center;
-  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+.calculator .input-grp__label {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 0.5;
+  color: hsl(172, 67%, 45%);
   margin-bottom: 1rem;
 }
-.card__activity {
-  font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-  line-height: 0.5;
-  color: hsl(0, 0%, 100%);
-}
-.card__ellipsis {
-  width: 60px;
-  height: 20px;
-  font-size: 3em;
-  margin-bottom: 2rem;
-  color: hsl(0, 0%, 100%);
-  position: absolute;
-  right: -1rem;
-}
-.card__bottomMenu {
+.calculator .input-grp__input {
   width: 100%;
-  height: 6rem;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  background-color: hsl(189, 41%, 97%);
 }
-.card__hours {
-  font-family: "Rubik", sans-serif;
-  font-weight: 200;
-  font-size: 5rem;
+.calculator .input-grp__dollar-sign {
+  width: 1rem;
+  height: 1rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 0.5;
+  color: hsl(183, 100%, 15%);
+}
+.calculator .input-grp__inputField {
+  width: 4rem;
+  height: 1rem;
+  border-style: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 0.5;
+  color: hsl(183, 100%, 15%);
+}
+.calculator .tip-buttons-grp {
+  width: 100%;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+.calculator .tip-buttons-grp__label {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 0.5;
+  color: hsl(172, 67%, 45%);
+  margin-bottom: 1rem;
+}
+.calculator .tip-buttons-grp__buttons-grp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.calculator .tip-buttons-grp__tipBtn {
+  width: 10.5rem;
+  height: 3rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.2rem;
   line-height: 0.5;
   color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  background-color: hsl(183, 100%, 15%);
+  cursor: pointer;
+  border-style: none;
+  transition: transform 0.7s ease;
+  margin-bottom: 0.7rem;
 }
-.card__previous {
-  display: inline-block;
-  font-family: "Rubik", sans-serif;
+.calculator .tip-buttons-grp__tipBtn:hover {
+  color: hsl(0, 0%, 100%);
+  transform: scale(1.2);
+}
+.calculator .results-grp {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  background-color: hsl(183, 100%, 15%);
+}
+.calculator .results-grp__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.calculator .results-grp__amount-grp {
+  width: 10rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calculator .results-grp__title {
+  width: 10rem;
+  height: 3rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 0.5;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 0.2rem;
+}
+.calculator .results-grp__p {
+  font-family: "Space Mono", monospace;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 0.5;
   color: hsl(0, 0%, 100%);
+}
+.calculator .results-grp__totals {
+  width: 9rem;
+  display: flex;
+  position: relative;
+  justify-content: right;
+  padding-top: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 0.5;
+  color: hsl(172, 67%, 45%);
+}
+.calculator .results-grp__totals::before {
+  content: "$";
+  left: 0; /* Adjust as needed */
+}
+.calculator .results-grp__reset-btn {
+  width: 15rem;
+  height: 3rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 0.5;
+  color: hsl(183, 100%, 15%);
+  border-radius: 5px;
+  background-color: hsl(172, 67%, 45%);
+  cursor: pointer;
+  border-style: none;
+  margin: 0 auto;
+  transition: transform 0.7s ease;
+  margin-bottom: 0.7rem;
 }
 
 .attribution {
@@ -268,7 +269,6 @@ h2 {
     display: flex;
     border-radius: 12px;
     flex-direction: column;
-    background-color: hsl(236, 46%, 36%);
   }
   .profile__profile_top {
     width: 100%;
@@ -277,7 +277,6 @@ h2 {
     align-items: center;
     border-radius: 12px;
     margin-bottom: 1.2rem;
-    background-color: hsl(268, 87%, 79%);
   }
   .profile__person {
     width: auto;
@@ -299,14 +298,14 @@ h2 {
     justify-content: space-around;
   }
   .card__activity {
-    font-family: "Rubik", sans-serif;
+    font-family: "Space Mono", monospace;
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 0.5;
     color: hsl(0, 0%, 100%);
   }
   .card__hours {
-    font-family: "Rubik", sans-serif;
+    font-family: "Space Mono", monospace;
     font-weight: 200;
     font-size: 2.5rem;
     line-height: 0.5;
@@ -314,7 +313,7 @@ h2 {
   }
   .card__previous {
     display: inline-block;
-    font-family: "Rubik", sans-serif;
+    font-family: "Space Mono", monospace;
     font-weight: 400;
     font-size: 1rem;
     line-height: 0.5;
