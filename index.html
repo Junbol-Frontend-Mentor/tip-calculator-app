@@ -17,33 +17,36 @@
       <section id="tip-calculator" class="container">
         <img class="logo" src="./assets/images/logo.png" alt="logo" />
         <div class="calculator">
-          <div class="input-grp">
-            <label class="input-grp__label" for="bill-amount">Bill</label>
-            <div class="input-grp__input">
-              <div class="input-grp__dollar-sign"><img src="./assets/images/icon-dollar.svg" alt="" /></div>
-              <input class="input-grp__inputField" type="number" id="bill-amount" name="bill-amount" placeholder="0000000000" required />
+          <div class="calculator__leftPanel-grp">
+            <div class="input-grp">
+              <label class="input-grp__label" for="bill-amount">Bill</label>
+              <div class="input-grp__input">
+                <div class="input-grp__dollar-sign"><img src="./assets/images/icon-dollar.svg" alt="" /></div>
+                <input class="input-grp__inputField" type="number" id="bill-amount" name="bill-amount" placeholder="0.00" required />
+              </div>
+            </div>
+  
+            <div class="tip-buttons-grp">
+              <label class="tip-buttons-grp__label">Select Tip %</label>
+              <div class="tip-buttons-grp__buttons-grp">
+                <button class="tip-buttons-grp__tipBtn tip-buttons-grp__active" id="5%btn" type="button" data-tip="5">5%</button>
+                <button class="tip-buttons-grp__tipBtn" type="button" data-tip="10">10%</button>
+                <button class="tip-buttons-grp__tipBtn" type="button" data-tip="15">15%</button>
+                <button class="tip-buttons-grp__tipBtn" type="button" data-tip="25">25%</button>
+                <button class="tip-buttons-grp__tipBtn" type="button" data-tip="50">30%</button>
+                <button class="tip-buttons-grp__tipBtn" type="button" data-tip="custom">50%</button>
+              </div>
+            </div>
+  
+            <div class="input-grp">
+              <label class="input-grp__label" for="num-people">Number of People</label>
+              <div class="input-grp__input">
+                <div class="input-grp__dollar-sign"><img src="./assets/images/icon-person.svg" alt="" /></div>
+                <input class="input-grp__inputField" type="number" id="num-people" name="num-people" placeholder="0" required />
+              </div>
             </div>
           </div>
 
-          <div class="tip-buttons-grp">
-            <label class="tip-buttons-grp__label">Select Tip %</label>
-            <div class="tip-buttons-grp__buttons-grp">
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="5">5%</button>
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="10">10%</button>
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="15">15%</button>
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="25">25%</button>
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="50">30%</button>
-              <button class="tip-buttons-grp__tipBtn" type="button" data-tip="custom">50%</button>
-            </div>
-          </div>
-
-          <div class="input-grp">
-            <label class="input-grp__label" for="num-people">Number of People</label>
-            <div class="input-grp__input">
-              <div class="input-grp__dollar-sign"><img src="./assets/images/icon-person.svg" alt="" /></div>
-              <input class="input-grp__inputField" type="number" id="num-people" name="num-people" placeholder="0000" required />
-            </div>
-          </div>
           <div class="results-grp" id="results">
             <!-- ❓❓❓ no labels here?-->
             <div class="results-grp__row">

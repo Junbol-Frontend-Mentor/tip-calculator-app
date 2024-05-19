@@ -21,8 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   align-items: center;
   background-color: hsl(185, 41%, 84%);
 }
@@ -40,7 +38,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo {
@@ -56,10 +53,9 @@ main {
   min-height: 100%; /* Use min-height to accommodate varying content sizes */
   display: flex;
   flex-direction: column;
-  opacity: 1;
   margin-top: 1rem;
   border-radius: 20px 20px 0px 0px;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: hsl(0, 0%, 100%);
 }
 .calculator p {
@@ -76,6 +72,13 @@ main {
   font-size: 2rem;
   line-height: 0.5;
   color: hsl(0, 0%, 100%);
+}
+.calculator__leftPanel-grp {
+  width: 100%;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 .calculator .input-grp {
   width: 100%;
@@ -131,6 +134,10 @@ main {
   flex-direction: column;
   margin-bottom: 2rem;
   padding-top: 1rem;
+  /* 🚩Grid Column Distribution: The width of the buttons is controlled by the grid layout using grid-template-columns: repeat(3, 1fr);. This ensures that each button takes up an equal fraction of the available space in each row.
+    Responsive Sizing: By not setting the width to 100%, the buttons can automatically resize based on the width of the container, maintaining equal spacing between them. 
+    Grid Cell Alignment: Setting the height of the buttons to 100% ensures that each button takes the full height of its grid cell, which is defined by the grid-template-rows property. 
+    Consistent Vertical Gaps: This guarantees that the vertical gaps between the buttons are consistent and match the horizontal gaps. */
 }
 .calculator .tip-buttons-grp__label {
   font-family: "Space Mono", monospace;
@@ -142,13 +149,16 @@ main {
 }
 .calculator .tip-buttons-grp__buttons-grp {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid; /* ✅ Use Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* ✅ Three columns */
+  grid-template-rows: repeat(2, 3rem); /* ✅ Two rows with consistent height */
+  gap: 0.7rem; /* ✅ Set the gap for both rows and columns */
 }
 .calculator .tip-buttons-grp__tipBtn {
-  width: 10.5rem;
-  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   font-family: "Space Mono", monospace;
   font-weight: 600;
   font-size: 1.2rem;
@@ -159,11 +169,14 @@ main {
   cursor: pointer;
   border-style: none;
   transition: transform 0.7s ease;
-  margin-bottom: 0.7rem;
 }
 .calculator .tip-buttons-grp__tipBtn:hover {
   color: hsl(0, 0%, 100%);
-  transform: scale(1.2);
+  background-color: hsl(172, 67%, 45%);
+}
+.calculator .tip-buttons-grp__active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(0, 0%, 100%);
 }
 .calculator .results-grp {
   width: 100%;
@@ -172,7 +185,8 @@ main {
   flex-direction: column;
   justify-content: space-around;
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: 15px;
   background-color: hsl(183, 100%, 15%);
 }
@@ -235,14 +249,19 @@ main {
   border-style: none;
   margin: 0 auto;
   transition: transform 0.7s ease;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.7s ease;
+}
+.calculator .results-grp__reset-btn:hover {
+  background-color: hsl(172, 90%, 62%);
+  transform: scale(1.05);
 }
 
 .attribution {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
   color: hsl(0, 0%, 50%);
 }
@@ -253,138 +272,35 @@ main {
 }
 
 /* Media Query for Desktops and Tablets */
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
   main {
     margin-top: 3rem;
   }
-  .profile {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-  }
-  .profile__profile_under {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    border-radius: 12px;
-    flex-direction: column;
-  }
-  .profile__profile_top {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    border-radius: 12px;
-    margin-bottom: 1.2rem;
-  }
-  .profile__person {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .profile__info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-  }
-  .profile__titles {
-    width: auto;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .card__activity {
-    font-family: "Space Mono", monospace;
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 0.5;
-    color: hsl(0, 0%, 100%);
-  }
-  .card__hours {
-    font-family: "Space Mono", monospace;
-    font-weight: 200;
-    font-size: 2.5rem;
-    line-height: 0.5;
-    color: hsl(0, 0%, 100%);
-  }
-  .card__previous {
-    display: inline-block;
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 0.5;
-    color: hsl(0, 0%, 100%);
-  }
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "profile work play study" "profile exercise social selfCare" "footer footer footer footer";
-    gap: 20px;
-    width: 80%;
-    padding: 20px;
-    margin-top: 100px;
-    margin: 0 auto;
+    width: 60rem;
   }
-  .profile {
-    grid-area: profile;
-    grid-row: span 2;
+  .calculator {
+    min-height: 28rem;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px 20px 20px 20px;
   }
-  #cards-container {
-    display: contents;
+  .calculator__leftPanel-grp {
+    width: 30rem;
+    height: 28rem;
+    display: flex;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
   }
-  .card:nth-child(1) {
-    grid-area: work;
-  }
-  .card:nth-child(2) {
-    grid-area: play;
-  }
-  .card:nth-child(3) {
-    grid-area: study;
-  }
-  .card:nth-child(4) {
-    grid-area: exercise;
-  }
-  .card:nth-child(5) {
-    grid-area: social;
-  }
-  .card:nth-child(6) {
-    grid-area: selfCare;
+  .calculator .results-grp {
+    width: 30rem;
   }
   .attribution {
     grid-area: footer;
   }
 }
 /* 
-Why adding height:100% fixed the🐞?
-
-To understand why the grid-row: span 2 property didn't work as expected initially I need to mention a few details:
-
-CSS Grid and Element Size Grid Row Spanning:
-
-The grid-row: span 2 property tells the grid item to span two rows.
-For this to work, the element must have content or a defined height that causes it to occupy the space of those two rows.
-
-Implicit vs. Explicit Heights:
-When you use auto for grid-template-rows, the row heights are determined by the content inside them.
-If the content inside the grid item does not push it to span multiple rows, the grid item may not visibly span those rows.
-Reasons the Span Might Not Work as Expected:
-
-Implicit Content Height:
-If the content inside .profile does not inherently push it to span two rows, it will not visually expand even if grid-row: span 2 is applied.
-
-Flexbox and Grid Interactions:
-Using display: flex on .profile and its child elements might affect how the height is calculated and rendered.
-Flexbox children default to having a height of auto, which means they shrink to fit their content.
-Why Adding height: 100% Worked:
-
-Explicit Height:
-Adding height: 100% to .profile__profile_under ensured that the element explicitly occupied the full height of the grid rows it spanned.
-This forced the profile section to expand and visually fill the two rows. */
+ */
 /* transition: transform 0.5s ease;
 &:hover {
   color: color('soft-magenta'); 
