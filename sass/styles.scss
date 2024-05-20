@@ -150,9 +150,24 @@ main {
     &__inputField {
       width: 4rem;
       height: 1rem;
-      border-style: none;
-      @include typography(600, 1rem, 0.5, color('very-dark-cyan'));
-      //background-color: red; /* For testing purposes */
+      flex-grow: 1; // ✅ Use flex-grow to make the input take up remaining space
+      border: none; // ✅ Remove default border
+      text-align: right; // 🟢 Align text to the right
+      background-color: transparent; // ✅ Ensure background is transparent
+      @include typography(700, 1.3rem, 0.5, color('very-dark-cyan'));
+      // ✅ Remove the spin buttons for number input fields
+      appearance: none; // ✅ Remove default styling for most browsers
+      -moz-appearance: textfield; // ✅ Remove default styling for Firefox
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none; // ✅ Remove default styling for WebKit browsers
+        margin: 0;
+        //background-color: red; /* For testing purposes */
+      }
+      &:focus {
+        outline: none; // ✅ Remove default outline on focus
+        border: none; // ✅ Ensure no border on focus
+      }
     }
   }
 

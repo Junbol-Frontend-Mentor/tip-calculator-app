@@ -43,8 +43,13 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### What I learned
 
-Working with SCSS animations, BEM & MediaQueries specially working with CSS GRID Areas combined with Dynamic Grid columns and rows.
-And of course creating all the logic to create the cards dynamically with javascript the use of fetch() and forEach method and interact with the DOM to clone and add cards to the UI also using the Switch conditional system to give the right icon and color to each card. and the forEach method. It has been the most difficult challenge until now, but I am happy I managed to finished it.
+Working with SCSS animations, BEM & MediaQueries specially
+
+- working with CSS GRID Areas combined with Dynamic Grid columns and rows.
+- creating all the logic in Javascript to do the math.
+- Using forEach again to iterate on the buttons
+- Using javascript to add the logic to reset input fields , classes and button's active state.
+- I took the liberty to avoid using the custom button to make things easier for the customer.
 
 ```
 

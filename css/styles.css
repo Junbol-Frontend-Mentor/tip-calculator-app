@@ -121,12 +121,25 @@ main {
 .calculator .input-grp__inputField {
   width: 4rem;
   height: 1rem;
-  border-style: none;
+  flex-grow: 1;
+  border: none;
+  text-align: right;
+  background-color: transparent;
   font-family: "Space Mono", monospace;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
   line-height: 0.5;
   color: hsl(183, 100%, 15%);
+  appearance: none;
+  -moz-appearance: textfield;
+}
+.calculator .input-grp__inputField::-webkit-outer-spin-button, .calculator .input-grp__inputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calculator .input-grp__inputField:focus {
+  outline: none;
+  border: none;
 }
 .calculator .tip-buttons-grp {
   width: 100%;
