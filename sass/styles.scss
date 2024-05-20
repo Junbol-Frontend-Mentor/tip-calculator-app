@@ -91,7 +91,6 @@ main {
   min-height: 100%; /* Use min-height to accommodate varying content sizes */
   display: flex;
   flex-direction: column;
-  //justify-content: space-around;
   margin-top: 1rem;
   border-radius: 20px 20px 0px 0px;
   padding: 1.5rem;
@@ -148,9 +147,9 @@ main {
       //background-color: aqua;
     }
     &__inputField {
-      width: 4rem;
+      width: 12rem;
       height: 1rem;
-      flex-grow: 1; // ✅ Use flex-grow to make the input take up remaining space
+      //flex-grow: 1; // ✅ Use flex-grow to make the input take up remaining space
       border: none; // ✅ Remove default border
       text-align: right; // 🟢 Align text to the right
       background-color: transparent; // ✅ Ensure background is transparent
@@ -184,18 +183,6 @@ main {
       margin-bottom: 1rem;
     }
 
-    /* 🚩Grid Column Distribution: The width of the buttons is controlled by the grid layout using grid-template-columns: repeat(3, 1fr);. This ensures that each button takes up an equal fraction of the available space in each row.
-      Responsive Sizing: By not setting the width to 100%, the buttons can automatically resize based on the width of the container, maintaining equal spacing between them. 
-      Grid Cell Alignment: Setting the height of the buttons to 100% ensures that each button takes the full height of its grid cell, which is defined by the grid-template-rows property. 
-      Consistent Vertical Gaps: This guarantees that the vertical gaps between the buttons are consistent and match the horizontal gaps. */
-    &__buttons-grp {
-      width: 100%;
-      display: grid; /* ✅ Use Grid layout */
-      grid-template-columns: repeat(3, 1fr); /* ✅ Three columns */
-      grid-template-rows: repeat(2, 3rem); /* ✅ Two rows with consistent height */
-      gap: 0.7rem; /* ✅ Set the gap for both rows and columns */
-      //background-color: blueviolet; /* For testing purposes */
-    }
 
     &__tipBtn {
       display: flex;

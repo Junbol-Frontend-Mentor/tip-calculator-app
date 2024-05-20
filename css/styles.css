@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 *,
 *::before,
@@ -119,9 +118,8 @@ main {
   color: hsl(183, 100%, 15%);
 }
 .calculator .input-grp__inputField {
-  width: 4rem;
+  width: 12rem;
   height: 1rem;
-  flex-grow: 1;
   border: none;
   text-align: right;
   background-color: transparent;
@@ -148,10 +146,6 @@ main {
   flex-direction: column;
   margin-bottom: 2rem;
   padding-top: 1rem;
-  /* 🚩Grid Column Distribution: The width of the buttons is controlled by the grid layout using grid-template-columns: repeat(3, 1fr);. This ensures that each button takes up an equal fraction of the available space in each row.
-    Responsive Sizing: By not setting the width to 100%, the buttons can automatically resize based on the width of the container, maintaining equal spacing between them. 
-    Grid Cell Alignment: Setting the height of the buttons to 100% ensures that each button takes the full height of its grid cell, which is defined by the grid-template-rows property. 
-    Consistent Vertical Gaps: This guarantees that the vertical gaps between the buttons are consistent and match the horizontal gaps. */
 }
 .calculator .tip-buttons-grp__label {
   font-family: "Space Mono", monospace;
@@ -160,13 +154,6 @@ main {
   line-height: 0.5;
   color: hsl(172, 67%, 45%);
   margin-bottom: 1rem;
-}
-.calculator .tip-buttons-grp__buttons-grp {
-  width: 100%;
-  display: grid; /* ✅ Use Grid layout */
-  grid-template-columns: repeat(3, 1fr); /* ✅ Three columns */
-  grid-template-rows: repeat(2, 3rem); /* ✅ Two rows with consistent height */
-  gap: 0.7rem; /* ✅ Set the gap for both rows and columns */
 }
 .calculator .tip-buttons-grp__tipBtn {
   display: flex;
