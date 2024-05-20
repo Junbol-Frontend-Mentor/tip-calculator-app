@@ -21,10 +21,10 @@ header {
 $colors: (
   //--------PRIMARY-----------------------------------
   'strong-cyan': hsl(172, 67%, 45%),
-  'ligfter-strong-cyan': hsl(172, 90%, 62%),
+  'lighter-strong-cyan': hsl(172, 90%, 62%),
   //--------NEUTRAL    ----------------------------
   'very-dark-cyan': hsl(183, 100%, 15%),
-  'dark-grayish cyan': hsl(186, 14%, 43%),
+  'dark-grayish-cyan': hsl(186, 14%, 43%),
   'grayish-cyan': hsl(184, 14%, 56%),
   'light-grayish-cyan': hsl(185, 41%, 84%),
   'very-light-grayish-cyan': hsl(189, 41%, 97%),
@@ -99,7 +99,7 @@ main {
   //background-color: chartreuse;
 
   p {
-    @include typography(400, 1.5rem, 0.5, color('pale-blue'));
+    @include typography(400, 1.5rem, 0.5, color('white'));
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
   }
@@ -195,7 +195,7 @@ main {
       transition: transform 0.7s ease;
       &:hover {
         color: color('white');
-        background-color: color('strong-cyan');
+        background-color: color('lighter-strong-cyan');
       }
     }
     &__active {
@@ -268,7 +268,7 @@ main {
       transition: transform 0.7s ease;
       &:hover {
         //🚩rembember how to nest hovers with &
-        background-color: color('ligfter-strong-cyan');
+        background-color: color('lighter-strong-cyan');
         transform: scale(1.05);
       }
     }

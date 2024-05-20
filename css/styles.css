@@ -63,6 +63,7 @@ main {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 0.5;
+  color: hsl(0, 0%, 100%);
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -172,7 +173,7 @@ main {
 }
 .calculator .tip-buttons-grp__tipBtn:hover {
   color: hsl(0, 0%, 100%);
-  background-color: hsl(172, 67%, 45%);
+  background-color: hsl(172, 90%, 62%);
 }
 .calculator .tip-buttons-grp__active {
   background-color: hsl(172, 67%, 45%);
