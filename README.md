@@ -25,8 +25,8 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Links
 
-- Solution URL: (https://github.com/Junbol-Frontend-Mentor/time-tracking-dashboard)
-- Live Site URL: (https://junbol-frontend-mentor.github.io/time-tracking-dashboard/)
+- Solution URL: (https://github.com/Junbol-Frontend-Mentor/tip-calculator-app)
+- Live Site URL: (https://junbol-frontend-mentor.github.io/tip-calculator-app/)
 
 ## My process
 
