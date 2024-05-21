@@ -182,7 +182,14 @@ main {
       @include typography(600, 1.2rem, 0.5, color('strong-cyan'));
       margin-bottom: 1rem;
     }
-
+    &__buttons-grp {
+      width: 100%;
+      display: grid; /* ✅ Use Grid layout */
+      grid-template-columns: repeat(3, 1fr); /* ✅ Three columns */
+      grid-template-rows: repeat(2, 3rem); /* ✅ Two rows with consistent height */
+      gap: 0.7rem; /* ✅ Set the gap for both rows and columns */
+      //background-color: blueviolet; /* For testing purposes */
+    }
 
     &__tipBtn {
       display: flex;

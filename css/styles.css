@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 *,
 *::before,
@@ -154,6 +155,13 @@ main {
   line-height: 0.5;
   color: hsl(172, 67%, 45%);
   margin-bottom: 1rem;
+}
+.calculator .tip-buttons-grp__buttons-grp {
+  width: 100%;
+  display: grid; /* ✅ Use Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* ✅ Three columns */
+  grid-template-rows: repeat(2, 3rem); /* ✅ Two rows with consistent height */
+  gap: 0.7rem; /* ✅ Set the gap for both rows and columns */
 }
 .calculator .tip-buttons-grp__tipBtn {
   display: flex;
